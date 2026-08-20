@@ -44,15 +44,14 @@ Vector *init_vector(size_t capacity, size_t element_size)
     return vector;
 }
 
-int vector_push(void *elem, Vector *vector){
+int vector_push(const void *elem, Vector *vector){
     if(vector->size >= vector->capacity){
         return 1;
     }
 
     unsigned char *data = (unsigned char *)vector->data;
 
-    void *dest = data + vector->size * vector->element_size;
-
+    void *dest = data + vector->size * vector->element_size; //vector->data[vector->size] = *elem; не работает, потому что data — void *. Компилятор не знает: data + 1
     my_memcpy(dest,elem,vector->element_size);
 
     vector->size++;
