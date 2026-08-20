@@ -4,5 +4,7 @@
 char *my_strcpy(char *dest, int dest_capacity, const char *src);
 int my_strlen(const char *src);
 int my_strcmp(const char *str1, const char *str2);
+void *my_memcpy(void *dest, const void *source, size_t size);
+void *my_memmove(void *dest, const void *source, size_t size);
 
 #endif
