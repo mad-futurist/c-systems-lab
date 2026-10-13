@@ -58,3 +58,7 @@ int vector_push(const void *elem, Vector *vector){
 
     return 0;
 }
+
+void *find_element(const int index, Vector *v){
+    
+}
